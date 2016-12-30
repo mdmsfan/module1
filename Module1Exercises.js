@@ -70,12 +70,12 @@ var output = multiply(-5, -6);
 
 function getEvenLengthWordsAtProperty(obj, key) {
   // your code here
-  var property = obj.key;
+  var property = obj[key];
   var evenWords = []; 
-  if (!Array.isArray(property)) {
+  if (!property) {
       return []; 
   }
-  else if (!property) {
+  else if (!Array.isArray(property)) {
       return []; 
   }
   else if (property.length === 0) {
