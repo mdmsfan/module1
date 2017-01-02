@@ -215,7 +215,19 @@ function getStringLength(string) {
   }
   return count; 
 }
+
+function myLength(s){
+ return s.split('').reduce(function(prevVal, currElement){
+  //inside the iterative function block
+  return prevVal + 1;
+ }, 0);  //need to have the very first 'prevVal' to work with on the 1st 
+         //iteration only
+}
+
+//reference: https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter
+
 var output = getStringLength('hello');
 console.log(output); // --> 5
+console.log(myLength('thr')) // 3
 
 
