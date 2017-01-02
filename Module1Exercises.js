@@ -134,4 +134,88 @@ var obj = {
   key: [1000, 11, 50, 17]
 };
 var output = getEvenElementsAtProperty(obj, 'key');
-console.log(output);
+//console.log(output);
+
+function getElementOfArrayProperty(obj, key, index) {
+  // your code here
+  var property = obj[key]; 
+  //console.log(property); 
+  if (!property) {
+      return undefined;
+  }
+  else if (property.length === 0) {
+      return undefined; 
+  }
+  else if (!Array.isArray(property)) {
+      return undefined; 
+  }
+  else if (property[index] === "undefined") {
+      return undefined; 
+  }
+    return property[index]; 
+}
+var obj = {
+ key: ['Jamil', 'Albrey']
+};
+var output = getElementOfArrayProperty(obj, 'key', 0); 
+//console.log(output); // --> 'Jamil'
+
+function multiply(num1, num2) {
+  // your code here
+ var total = 0; 
+if (num1 > 0 && num2 > 0) {
+    for (; num2 > 0; num2 = num2 - 1) {
+        total = total + num1; 
+    }
+    return total; 
+  }
+else if (num1 === 0 || num2 === 0) {
+  return total; 
+  }
+else if (num1 < 0 && num2 < 0) {
+  for (; num2 < 0; num2 = num2 + 1) {
+    total = total + num1; 
+  }
+  return -total; 
+}
+else if (num1 > 0 && num2 < 0) {
+    for(; num2 < 0; num2 = num2 + 1) {
+      total = total - num1
+    }
+    return total; 
+  }
+else if (num1 < 0 && num2 > 0) {
+  for(; num2 > 0; num2 = num2 - 1) {
+      total = total + num1
+    }
+    return total; 
+}
+} 
+var output = multiply(-2, -2);
+//console.log(output); // --> 28
+
+// Write a function called "getStringLength".
+
+// Given a string, "getStringLength" returns the length of the given string.
+
+// Notes:
+// * Do NOT use any native 'length' methods.
+// * You might consider using 'substring' or 'slice' as alternatives.
+
+function getStringLength(string) {
+  // your code here
+  //have a temp thing/
+  //keep changing it until temp thing is zero
+  var temp
+  var count = 0
+  var n = 1; 
+  while (string !== "") {
+      string = string.substring(1); 
+      count = count + 1; 
+  }
+  return count; 
+}
+var output = getStringLength('hello');
+console.log(output); // --> 5
+
+
