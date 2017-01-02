@@ -227,7 +227,33 @@ function myLength(s){
 //reference: https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter
 
 var output = getStringLength('hello');
-console.log(output); // --> 5
-console.log(myLength('thr')) // 3
 
+//console.log(output); // --> 5
 
+function findShortestWordAmongMixedElements(arr) {
+  // your code here
+  if (arr.length === 0) {
+      return "";
+  }
+  var arrStr = []; 
+  for (var i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === "string") {
+          arrStr.push(arr[i]); 
+      }
+  }
+  if (arrStr.length === 0) {
+      return ""; 
+  }
+  var shortestWord = arrStr[0]; 
+  for (var k = 0; k < arrStr.length; k++) {
+      if (arrStr[k].length < shortestWord.length) {
+          shortestWord = arrStr[k]; 
+      }
+      else if (shortestWord.length = arrStr[k].length) {
+          shortestWord; 
+      }
+  }
+  return shortestWord; 
+}
+var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
+console.log(output); // --> 'two'
